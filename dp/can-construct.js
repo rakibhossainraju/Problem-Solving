@@ -9,4 +9,4 @@ const canConstruct = (target, wordBank) => {
   }
   return false;
 };
-console.log(canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']));
+console.log(canConstruct('abcdef', ['ab', 'abc', 'ef', 'c', 'cd', 'def', 'abcd']));

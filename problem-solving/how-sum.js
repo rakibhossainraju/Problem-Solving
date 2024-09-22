@@ -1,5 +1,4 @@
 const howSum = (targetSum, numbers, memo = {}) => {
-  console.log(memo)
   if (targetSum in memo) return memo[targetSum];
   if (targetSum === 0) return [];
   if (targetSum < 0) return null;
@@ -8,7 +7,7 @@ const howSum = (targetSum, numbers, memo = {}) => {
     const remainderResult = howSum(remainder, numbers, memo);
     if (remainderResult !== null) {
       memo[targetSum] =  [...remainderResult, num];
-      return remainderResult
+      return memo[targetSum];
     } else memo[targetSum] = remainderResult;
   }
   return null;
