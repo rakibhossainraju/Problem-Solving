@@ -16,4 +16,5 @@ const canConstruct = (targetStr, wordBank) => {
   }
   return table;
 }
-console.log(canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']))
+// console.log(canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']));
+console.log(canConstruct('leetscode', ["leet","code","leetcode"]));
