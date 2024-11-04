@@ -1,5 +1,5 @@
 function arrangeCoins(n: number): number {
-    const staircase = Array.from({length: Math.round(n / 2)}, (element, index) => {
+    const staircase = Array.from({length: Math.round(n / 2)}, (_,index) => {
         const row = Array(index + 1)
         for(let i = 0; i < index + 1; i++) {
             if(n > 0) row[i] = true;
