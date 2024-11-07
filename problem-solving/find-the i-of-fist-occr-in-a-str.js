@@ -3,24 +3,23 @@
  * @param {string} needle
  * @return {number}
  */
-var strStr = function(haystack, needle) {
+var strStr = function (haystack, needle) {
   let i = 0;
   let j = 0;
-  while(i < haystack.length){
+  while (i < haystack.length) {
     const hayChar = haystack[i];
     const needleChar = needle[j];
     i++;
-    if(hayChar === needleChar){
+    if (hayChar === needleChar) {
       if (j === needle.length - 1) return i - 1 - j;
       j++;
     } else {
       i = i - j;
       j = 0;
-    }  
+    }
   }
   return -1;
 };
-
 
 // console.log(strStr('AAAAAAAAAAAAAAAAAB', 'AAAAB'));
 // console.log('AAAAAAAAAAAAAAAAAB'.indexOf('AAAAB'));
@@ -30,12 +29,12 @@ const computeLPSArray = (str) => {
   let len = 0;
   let i = 1;
   while (i < str.length) {
-    if(str[i] === str[len]){
+    if (str[i] === str[len]) {
       len++;
       lpsTable[i] = len;
       i++;
     } else {
-      if(len !== 0){
+      if (len !== 0) {
         len = lpsTable[len - 1];
       } else {
         lpsTable[i] = 0;
@@ -47,9 +46,6 @@ const computeLPSArray = (str) => {
 };
 console.log(computeLPSArray("cbbd"));
 
-
-
-
 // const computeLPSArray = (str) => {
 //   const lpsTable = [0];
 //   let i = 1;
@@ -57,7 +53,7 @@ console.log(computeLPSArray("cbbd"));
 //   while (i < str.length) {
 //     const charI = str[i]; // i = 1, a
 //     const matchChar = str[len];
-    
+
 //     if (charI === matchChar) {
 //       len++;
 //       lpsTable.push(len);
@@ -76,8 +72,8 @@ const kmpAlogrithom = (haystack, needle) => {
   needle = " " + needle;
   let i = 0;
   let j = 0;
-  while(i < haystack.length){
-    if(haystack[i] === needle[j + 1]){
+  while (i < haystack.length) {
+    if (haystack[i] === needle[j + 1]) {
       i++;
       j++;
       if (j === needle.length - 1) return i - j;
@@ -87,7 +83,7 @@ const kmpAlogrithom = (haystack, needle) => {
     }
   }
 
-  return - 1;
+  return -1;
 };
 
 // console.log(kmpAlogrithom('aabaaabaaac', 'aabaaac'))

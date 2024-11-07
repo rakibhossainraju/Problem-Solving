@@ -10,7 +10,7 @@ function isCircularSentence(sentence: string): boolean {
   const firstWord = splittedSentence[0];
   const lastWord = splittedSentence[splittedSentence.length - 1];
   if (firstWord[0] !== lastWord[lastWord.length - 1]) return false;
-  
+
   return true;
 }
 

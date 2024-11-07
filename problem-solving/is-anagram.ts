@@ -12,8 +12,8 @@ function isAnagram(s: string, t: string): boolean {
     else frequencyMapT.set(char, (frequencyMapT.get(char) ?? 0) + 1);
   }
   for (const [key, val] of frequencyMapT) {
-    if(!frequencyMapS.has(key)) return false;
-    if(frequencyMapS.get(key) !== val) return false;
+    if (!frequencyMapS.has(key)) return false;
+    if (frequencyMapS.get(key) !== val) return false;
   }
 
   return true;
