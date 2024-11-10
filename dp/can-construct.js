@@ -1,12 +1,14 @@
 const canConstruct = (target, wordBank) => {
-  if(target.length === 0) return true;
-  for(const subStr of wordBank){
+  if (target.length === 0) return true;
+  for (const subStr of wordBank) {
     const subStrOfTarget = target.substr(0, subStr.length);
     if (subStrOfTarget === subStr) {
       const newTarget = target.slice(subStr.length, target.length);
-      canConstruct(newTarget, wordBank)
+      canConstruct(newTarget, wordBank);
     }
   }
   return false;
 };
-console.log(canConstruct('abcdef', ['ab', 'abc', 'ef', 'c', 'cd', 'def', 'abcd']));
+console.log(
+  canConstruct("abcdef", ["ab", "abc", "ef", "c", "cd", "def", "abcd"]),
+);

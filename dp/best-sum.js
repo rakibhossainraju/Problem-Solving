@@ -3,19 +3,22 @@ const bestSum = (targetSum, nums, memo = {}) => {
   if (targetSum === 0) return [];
   if (targetSum < 0) return null;
   let shortestCombination = null;
-  
-  for(const num of nums) {
+
+  for (const num of nums) {
     const remainder = targetSum - num;
     const remainderResult = bestSum(remainder, nums, memo);
-    if(remainderResult !== null) {
+    if (remainderResult !== null) {
       const combination = [...remainderResult, num];
-      
-      if(shortestCombination === null || combination.length < shortestCombination.length) {
+
+      if (
+        shortestCombination === null ||
+        combination.length < shortestCombination.length
+      ) {
         shortestCombination = combination;
       }
     }
   }
-  console.log(memo)
+  console.log(memo);
   memo[targetSum] = shortestCombination;
   return shortestCombination;
 };

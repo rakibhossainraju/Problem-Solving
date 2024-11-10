@@ -4,15 +4,13 @@ const bestSum = (targetSum, numbers) => {
   for (let i = 0; i <= targetSum; i++) {
     if (table[i] !== null) {
       for (const num of numbers) {
-        
         if (table[i + num] !== undefined) {
+          const combination = [...table[i], num];
+          const prevVal = table[i + num];
 
-            const combination = [...table[i], num];
-            const prevVal = table[i + num];
-
-            if(!prevVal || prevVal.length > combination.length) {
-              table[i + num] = combination;
-            }
+          if (!prevVal || prevVal.length > combination.length) {
+            table[i + num] = combination;
+          }
         }
       }
     }

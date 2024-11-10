@@ -4,7 +4,7 @@ const howSum = (targetSum, nums) => {
   for (let i = 0; i <= targetSum; i++) {
     if (table[i] !== null) {
       for (const num of nums) {
-        if(table[i + num] !== undefined) table[i + num] = [...table[i], num];
+        if (table[i + num] !== undefined) table[i + num] = [...table[i], num];
       }
     }
   }

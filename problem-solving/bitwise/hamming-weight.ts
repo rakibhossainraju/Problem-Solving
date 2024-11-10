@@ -9,3 +9,7 @@ function hammingWeight(n: number): number {
   return count;
 }
 console.log(hammingWeight(11)); // 3
+
+function hammingWeightBitwise(n: number): number {
+  let count = 0;
+}
