@@ -9,7 +9,7 @@ function maximumSubarraySum(nums: number[], k: number): number {
   for (let right = 0; right < nums.length; right++) {
     const num = nums[right];
 
-    while(windowSet.has(num) || windowSet.size >= k) {
+    while (windowSet.has(num) || windowSet.size >= k) {
       const toRemove = nums[left];
       windowSet.delete(toRemove);
       currentSUm -= toRemove;
@@ -19,11 +19,11 @@ function maximumSubarraySum(nums: number[], k: number): number {
     windowSet.add(num);
     currentSUm += num;
 
-    if(windowSet.size === k) {
+    if (windowSet.size === k) {
       maxSum = Math.max(maxSum, currentSUm);
     }
   }
   return maxSum;
 }
-console.log(maximumSubarraySum([1,5,4,2,9,9,9], 3));
+console.log(maximumSubarraySum([1, 5, 4, 2, 9, 9, 9], 3));
 // console.log(maximumSubarraySum([1,5,4,2,9,5,9,], 3));
