@@ -19,8 +19,8 @@ function intToRoman(num: number): string {
   let roman = "";
   for (const item of list) {
     while (num >= item[0]) {
-        num -= item[0];
-        roman += item[1];
+      num -= item[0];
+      roman += item[1];
     }
   }
 
