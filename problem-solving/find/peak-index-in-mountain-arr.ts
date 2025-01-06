@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
+
 function peakIndexInMountainArray(arr: number[]): number {
   let maxNum = arr[0];
   let peakIndex = 0;

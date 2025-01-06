@@ -5,7 +5,10 @@ function vowelStrings(words: string[], queries: number[][]): number[] {
   let previousValue = 0;
   const prefixSum: number[] = Array.from({ length: words.length }, (_, i) => {
     if (i === 0) {
-      previousValue = vowels.has(words[0][0]) && vowels.has(words[0][words[0].length - 1]) ? 1 : 0;
+      previousValue =
+        vowels.has(words[0][0]) && vowels.has(words[0][words[0].length - 1])
+          ? 1
+          : 0;
     } else {
       previousValue +=
         vowels.has(words[i][0]) && vowels.has(words[i][words[i].length - 1])
